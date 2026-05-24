@@ -5,6 +5,7 @@ import BannerOne from "../components/BannerOne";
 import FeatureOne from "../components/FeatureOne";
 import PromotionalOne from "../components/PromotionalOne";
 import FlashSalesOne from "../components/FlashSalesOne";
+import TrendingProducts from "../components/TrendingProducts";
 import ProductListOne from "../components/ProductListOne";
 import OfferOne from "../components/OfferOne";
 import RecommendedOne from "../components/RecommendedOne";
@@ -51,6 +52,9 @@ const HomePageOne = () => {
 
       {/* FlashSalesOne */}
       <FlashSalesOne />
+
+      {/* TrendingProducts — live Valkey sorted set scores */}
+      <TrendingProducts />
 
       {/* ProductListOne */}
       <ProductListOne />
