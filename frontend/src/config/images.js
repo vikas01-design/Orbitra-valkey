@@ -40,18 +40,18 @@ export function img(path) {
 
 // ── Product image map ─────────────────────────────────────────────────────────
 // Keys match product IDs in data/products.js
-// Values are S3 object keys (relative paths inside the bucket)
+// Local fallbacks use the correct existing images from public/assets/images/thumbs/
 export const productImages = {
-  "prod-1":  img("products/instax-mini-12.jpg")   || img("assets/images/thumbs/product-two-img1.png"),
-  "prod-2":  img("products/sony-wh1000xm5.jpg")   || img("assets/images/thumbs/product-two-img2.png"),
-  "prod-3":  img("products/samsung-s24-ultra.jpg") || img("assets/images/thumbs/product-two-img3.png"),
-  "prod-4":  img("products/macbook-pro-m3.jpg")    || img("assets/images/thumbs/product-two-img4.png"),
-  "prod-5":  img("products/anker-usb-hub.jpg")     || img("assets/images/thumbs/product-two-img5.png"),
-  "prod-6":  img("products/logitech-mx-master.jpg")|| img("assets/images/thumbs/product-two-img6.png"),
-  "prod-7":  img("products/ipad-pro-m2.jpg")       || img("assets/images/thumbs/product-two-img7.png"),
-  "prod-8":  img("products/jbl-charge-5.jpg")      || img("assets/images/thumbs/product-two-img8.png"),
-  "prod-9":  img("products/gopro-hero12.jpg")      || img("assets/images/thumbs/product-two-img9.png"),
-  "prod-10": img("products/xiaomi-redmi-note13.jpg")|| img("assets/images/thumbs/product-two-img10.png"),
+  "prod-1":  CDN ? `${CDN}/products/instax-mini-12.jpg`    : "assets/images/thumbs/product-details-img1.png",   // Camera
+  "prod-2":  CDN ? `${CDN}/products/sony-wh1000xm5.jpg`   : "assets/images/thumbs/product-details-img2.png",   // Headphone
+  "prod-3":  CDN ? `${CDN}/products/samsung-s24-ultra.jpg` : "assets/images/thumbs/product-details-img3.png",   // Mobile
+  "prod-4":  CDN ? `${CDN}/products/macbook-pro-m3.jpg`    : "assets/images/thumbs/feature-img1.png",           // Laptop
+  "prod-5":  CDN ? `${CDN}/products/anker-usb-hub.jpg`     : "assets/images/thumbs/feature-img2.png",           // USB
+  "prod-6":  CDN ? `${CDN}/products/logitech-mx-master.jpg`: "assets/images/thumbs/feature-img3.png",           // Accessories
+  "prod-7":  CDN ? `${CDN}/products/ipad-pro-m2.jpg`       : "assets/images/thumbs/feature-img4.png",           // Tablet
+  "prod-8":  CDN ? `${CDN}/products/jbl-charge-5.jpg`      : "assets/images/thumbs/feature-img5.png",           // Speaker
+  "prod-9":  CDN ? `${CDN}/products/gopro-hero12.jpg`      : "assets/images/thumbs/feature-img6.png",           // Camera
+  "prod-10": CDN ? `${CDN}/products/xiaomi-redmi-note13.jpg`: "assets/images/thumbs/feature-img7.png",          // Mobile
 };
 
 // Fallback image shown when any product image fails to load
