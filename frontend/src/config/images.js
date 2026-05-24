@@ -39,23 +39,22 @@ export function img(path) {
 }
 
 // ── Product image map ─────────────────────────────────────────────────────────
-// Keys match product IDs in data/products.js
-// Local fallbacks use the correct existing images from public/assets/images/thumbs/
+// Real Pexels photos matched to each product
 export const productImages = {
-  "prod-1":  CDN ? `${CDN}/products/instax-mini-12.jpg`    : "assets/images/thumbs/product-details-img1.png",   // Camera
-  "prod-2":  CDN ? `${CDN}/products/sony-wh1000xm5.jpg`   : "assets/images/thumbs/product-details-img2.png",   // Headphone
-  "prod-3":  CDN ? `${CDN}/products/samsung-s24-ultra.jpg` : "assets/images/thumbs/product-details-img3.png",   // Mobile
-  "prod-4":  CDN ? `${CDN}/products/macbook-pro-m3.jpg`    : "assets/images/thumbs/feature-img1.png",           // Laptop
-  "prod-5":  CDN ? `${CDN}/products/anker-usb-hub.jpg`     : "assets/images/thumbs/feature-img2.png",           // USB
-  "prod-6":  CDN ? `${CDN}/products/logitech-mx-master.jpg`: "assets/images/thumbs/feature-img3.png",           // Accessories
-  "prod-7":  CDN ? `${CDN}/products/ipad-pro-m2.jpg`       : "assets/images/thumbs/feature-img4.png",           // Tablet
-  "prod-8":  CDN ? `${CDN}/products/jbl-charge-5.jpg`      : "assets/images/thumbs/feature-img5.png",           // Speaker
-  "prod-9":  CDN ? `${CDN}/products/gopro-hero12.jpg`      : "assets/images/thumbs/feature-img6.png",           // Camera
-  "prod-10": CDN ? `${CDN}/products/xiaomi-redmi-note13.jpg`: "assets/images/thumbs/feature-img7.png",          // Mobile
+  "prod-1":  CDN ? `${CDN}/products/instax-mini-12.jpg`     : "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-2":  CDN ? `${CDN}/products/sony-wh1000xm5.jpg`    : "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-3":  CDN ? `${CDN}/products/samsung-s24-ultra.jpg`  : "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-4":  CDN ? `${CDN}/products/macbook-pro-m3.jpg`     : "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400",
+  "prod-5":  CDN ? `${CDN}/products/anker-usb-hub.jpg`      : "https://images.pexels.com/photos/4219654/pexels-photo-4219654.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-6":  CDN ? `${CDN}/products/logitech-mx-master.jpg` : "https://images.pexels.com/photos/2115257/pexels-photo-2115257.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-7":  CDN ? `${CDN}/products/ipad-pro-m2.jpg`        : "https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-8":  CDN ? `${CDN}/products/jbl-charge-5.jpg`       : "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-9":  CDN ? `${CDN}/products/gopro-hero12.jpg`       : "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "prod-10": CDN ? `${CDN}/products/xiaomi-redmi-note13.jpg`: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=400",
 };
 
 // Fallback image shown when any product image fails to load
-export const FALLBACK_IMAGE = "assets/images/thumbs/product-two-img1.png";
+export const FALLBACK_IMAGE = "https://placehold.co/400x400/f1f5f9/94a3b8?text=Product";
 
 /**
  * Get image URL for a product — prefers S3, falls back to local asset.
