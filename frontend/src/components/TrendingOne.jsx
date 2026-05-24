@@ -6,7 +6,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchTrendingProducts, trackProductView } from "../api/trendingApi";
+import { trackProductView } from "../api/trendingApi";
 
 // ─── Skeleton card shown while loading ───────────────────────────────────────
 const SkeletonCard = () => (
