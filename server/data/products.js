@@ -1,7 +1,20 @@
 /**
- * data/products.js — shared product catalog
- * Used by trending, also-viewed, and search routes.
+ * data/products.js — Product catalog
+ *
+ * image field:
+ *   - Local:       "assets/images/thumbs/product-two-img1.png"
+ *   - S3:          "https://orbitra-product-images.s3.ap-south-1.amazonaws.com/products/instax-mini-12.jpg"
+ *   - CloudFront:  "https://dxxxxx.cloudfront.net/products/instax-mini-12.jpg"
+ *
+ * To switch to S3, set IMAGE_BASE_URL env var:
+ *   IMAGE_BASE_URL=https://orbitra-product-images.s3.ap-south-1.amazonaws.com
  */
+
+const BASE = process.env.IMAGE_BASE_URL || "";
+
+function img(s3Key, localFallback) {
+  return BASE ? `${BASE}/${s3Key}` : localFallback;
+}
 
 const PRODUCTS = [
   {
@@ -16,8 +29,10 @@ const PRODUCTS = [
     reviews: "12K",
     badge: "Best Seller",
     badgeColor: "bg-tertiary-600",
-    image: "assets/images/thumbs/product-two-img1.png",
+    image: img("products/instax-mini-12.jpg", "assets/images/thumbs/product-two-img1.png"),
     deliveryDate: "Aug 02",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-2",
@@ -31,8 +46,10 @@ const PRODUCTS = [
     reviews: "8K",
     badge: "New",
     badgeColor: "bg-warning-600",
-    image: "assets/images/thumbs/product-two-img2.png",
+    image: img("products/sony-wh1000xm5.jpg", "assets/images/thumbs/product-two-img2.png"),
     deliveryDate: "Aug 03",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-3",
@@ -46,8 +63,10 @@ const PRODUCTS = [
     reviews: "20K",
     badge: "Sale 25%",
     badgeColor: "bg-danger-600",
-    image: "assets/images/thumbs/product-two-img3.png",
+    image: img("products/samsung-s24-ultra.jpg", "assets/images/thumbs/product-two-img3.png"),
     deliveryDate: "Aug 01",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-4",
@@ -61,8 +80,10 @@ const PRODUCTS = [
     reviews: "5K",
     badge: "Hot",
     badgeColor: "bg-danger-600",
-    image: "assets/images/thumbs/product-two-img4.png",
+    image: img("products/macbook-pro-m3.jpg", "assets/images/thumbs/product-two-img4.png"),
     deliveryDate: "Aug 04",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-5",
@@ -76,8 +97,10 @@ const PRODUCTS = [
     reviews: "15K",
     badge: "Popular",
     badgeColor: "bg-success-600",
-    image: "assets/images/thumbs/product-two-img5.png",
+    image: img("products/anker-usb-hub.jpg", "assets/images/thumbs/product-two-img5.png"),
     deliveryDate: "Aug 02",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-6",
@@ -91,8 +114,10 @@ const PRODUCTS = [
     reviews: "18K",
     badge: "Best Seller",
     badgeColor: "bg-tertiary-600",
-    image: "assets/images/thumbs/product-two-img6.png",
+    image: img("products/logitech-mx-master.jpg", "assets/images/thumbs/product-two-img6.png"),
     deliveryDate: "Aug 03",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-7",
@@ -106,8 +131,10 @@ const PRODUCTS = [
     reviews: "9K",
     badge: "New",
     badgeColor: "bg-warning-600",
-    image: "assets/images/thumbs/product-two-img7.png",
+    image: img("products/ipad-pro-m2.jpg", "assets/images/thumbs/product-two-img7.png"),
     deliveryDate: "Aug 05",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-8",
@@ -121,8 +148,10 @@ const PRODUCTS = [
     reviews: "11K",
     badge: "Sale",
     badgeColor: "bg-danger-600",
-    image: "assets/images/thumbs/product-two-img8.png",
+    image: img("products/jbl-charge-5.jpg", "assets/images/thumbs/product-two-img8.png"),
     deliveryDate: "Aug 02",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-9",
@@ -136,8 +165,10 @@ const PRODUCTS = [
     reviews: "7K",
     badge: "Popular",
     badgeColor: "bg-success-600",
-    image: "assets/images/thumbs/product-two-img9.png",
+    image: img("products/gopro-hero12.jpg", "assets/images/thumbs/product-two-img9.png"),
     deliveryDate: "Aug 06",
+    views: 0,
+    trendingScore: 0,
   },
   {
     id: "prod-10",
@@ -151,8 +182,10 @@ const PRODUCTS = [
     reviews: "25K",
     badge: "Hot Deal",
     badgeColor: "bg-danger-600",
-    image: "assets/images/thumbs/product-two-img10.png",
+    image: img("products/xiaomi-redmi-note13.jpg", "assets/images/thumbs/product-two-img10.png"),
     deliveryDate: "Aug 01",
+    views: 0,
+    trendingScore: 0,
   },
 ];
 
